@@ -38,12 +38,13 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commandsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.infoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(544, 388);
+            this.btnSubmit.Location = new System.Drawing.Point(538, 400);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
             this.btnSubmit.TabIndex = 0;
@@ -53,18 +54,19 @@
             // 
             // richTextBox1
             // 
-            this.richTextBox1.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.richTextBox1.BackColor = System.Drawing.Color.White;
             this.richTextBox1.Location = new System.Drawing.Point(2, 30);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(230, 352);
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedBoth;
+            this.richTextBox1.Size = new System.Drawing.Size(283, 352);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
             // txtCommand
             // 
-            this.txtCommand.Location = new System.Drawing.Point(235, 388);
+            this.txtCommand.Location = new System.Drawing.Point(280, 402);
             this.txtCommand.Name = "txtCommand";
-            this.txtCommand.Size = new System.Drawing.Size(286, 20);
+            this.txtCommand.Size = new System.Drawing.Size(238, 20);
             this.txtCommand.TabIndex = 2;
             this.txtCommand.TextChanged += new System.EventHandler(this.txtCommand_TextChanged);
             // 
@@ -122,11 +124,20 @@
             this.infoToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.infoToolStripMenuItem.Text = "Info";
             // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(316, 30);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(350, 350);
+            this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(678, 445);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtCommand);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.btnSubmit);
@@ -134,7 +145,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
             this.Text = "Graphics";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.MainForm_Paint);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -154,6 +164,7 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commandsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem infoToolStripMenuItem;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 
