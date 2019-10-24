@@ -1,0 +1,9 @@
+C:\Users\44781\Desktop\GraphicsTool\GraphicsTools\GraphicsTools\bin\Debug\GraphicsTools.exe.config
+C:\Users\44781\Desktop\GraphicsTool\GraphicsTools\GraphicsTools\bin\Debug\GraphicsTools.exe
+C:\Users\44781\Desktop\GraphicsTool\GraphicsTools\GraphicsTools\bin\Debug\GraphicsTools.pdb
+C:\Users\44781\Desktop\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.csprojAssemblyReference.cache
+C:\Users\44781\Desktop\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.MainForm.resources
+C:\Users\44781\Desktop\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.Properties.Resources.resources
+C:\Users\44781\Desktop\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.csproj.GenerateResource.cache
+C:\Users\44781\Desktop\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.exe
+C:\Users\44781\Desktop\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.pdb
