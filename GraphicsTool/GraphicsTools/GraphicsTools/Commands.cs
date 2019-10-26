@@ -9,14 +9,15 @@ namespace GraphicsTools
     class Commands:MainForm
     {
         
-       public string PositionPen;
-       public string PenDraw;
-       public string Clear;
-       public string ResetPen;
-       public string save;
-
-
+       public string PositionPen { get; set;}
+       public string PenDraw{ get; set;}
+       public string Clear{ get; set;}
+       public string ResetPen { get; set; }
+       public string Save { get; set; }
     }
 
+
+  
+ 
 
 }

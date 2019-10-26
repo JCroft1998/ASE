@@ -7,3 +7,13 @@ C:\Users\44781\Desktop\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\Graphi
 C:\Users\44781\Desktop\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.csproj.GenerateResource.cache
 C:\Users\44781\Desktop\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.exe
 C:\Users\44781\Desktop\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.pdb
+C:\Users\c3485053\Documents\ASE-master\ASE-master\GraphicsTool\GraphicsTools\GraphicsTools\bin\Debug\GraphicsTools.exe.config
+C:\Users\c3485053\Documents\ASE-master\ASE-master\GraphicsTool\GraphicsTools\GraphicsTools\bin\Debug\GraphicsTools.exe
+C:\Users\c3485053\Documents\ASE-master\ASE-master\GraphicsTool\GraphicsTools\GraphicsTools\bin\Debug\GraphicsTools.pdb
+C:\Users\c3485053\Documents\ASE-master\ASE-master\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.csprojAssemblyReference.cache
+C:\Users\c3485053\Documents\ASE-master\ASE-master\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.MainForm.resources
+C:\Users\c3485053\Documents\ASE-master\ASE-master\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.Properties.Resources.resources
+C:\Users\c3485053\Documents\ASE-master\ASE-master\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.csproj.GenerateResource.cache
+C:\Users\c3485053\Documents\ASE-master\ASE-master\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.csproj.CoreCompileInputs.cache
+C:\Users\c3485053\Documents\ASE-master\ASE-master\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.exe
+C:\Users\c3485053\Documents\ASE-master\ASE-master\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.pdb
