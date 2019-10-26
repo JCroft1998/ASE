@@ -8,7 +8,7 @@ using System.Drawing;
 namespace GraphicsTools
 {
    
-    public class Shapes : MainForm
+    public partial class Shapes : MainForm
 
        
     {
@@ -25,19 +25,29 @@ namespace GraphicsTools
 
             g.DrawRectangle(blackpen, rect);
 
+           
 
         }
 
         public void DrawCircle()
         {
+            Graphics g = Graphics.FromImage(DrawIamge);
 
+            Pen Redpen = new Pen(Color.Black, 3);
+
+          
         }
 
         public void DrawTriangle()
         {
+            Graphics g = Graphics.FromImage(DrawIamge);
+            Pen BluePen = new Pen(Color.Blue, 3);
+            Point[] points = new Point[3];
+            points[0] = new Point(200, 10);
+            points[1] = new Point(150, 75);
+            points[2] = new Point(250,75);
 
-
-
+            g.DrawPolygon(BluePen, points);
         }
         
 
