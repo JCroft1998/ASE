@@ -16,8 +16,10 @@ namespace GraphicsTools
        
     {   //Referencing classes 
         Bitmap Mybitmap;
+        Image File;
         Shapes shapes;
         Commands commands;
+        bool MouseDown;
     
         public MainForm()
         {
@@ -27,16 +29,12 @@ namespace GraphicsTools
             Mybitmap = new Bitmap(Size.Width,Size.Height);
             Graphics g = Graphics.FromImage(Mybitmap);
 
-            this.Width = 700;
-            this.Height = 475;   
+            
+           // this.Width = 700;
+           // this.Height = 475;   
         }
 
         
-
-        private void btnSubmit_Click(object sender, EventArgs e)
-        {
-           
-        }
 
     
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -71,16 +69,10 @@ namespace GraphicsTools
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            /*
-            SaveFileDialog dialog = new SaveFileDialog();
-            if (dialog.ShowDialog() == DialogResult.OK)
             
-                int width = Convert.ToInt32(Mybitmap.Width);
-                int height = Convert.ToInt32(Mybitmap.Height);
-                Bitmap bmp = new Bitmap(width, height);
-                Mybitm
-                */
-            }
+
+           
+        }
 
 
 
@@ -132,6 +124,61 @@ namespace GraphicsTools
            
 
             
+        }
+
+        public void btnClear_Click(object sender, EventArgs e)
+        {
+            Graphics g = Graphics.FromImage(Mybitmap);
+
+            g.Clear(Color.White);
+
+            txtCommand.Clear();
+
+            Refresh();
+        }
+
+        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog f = new OpenFileDialog();
+            f.Filter = "JPG(*.JPG)|*.jpg";
+
+            if (f.ShowDialog() == DialogResult.OK)
+            {
+                File = Image.FromFile(f.FileName);
+                
+
+            }
+        }
+
+        private void btnPaint_MouseDown(object sender, MouseEventArgs e)
+        {
+            MouseDown = true;
+        }
+
+        private void panel1_MouseMove(object sender, MouseEventArgs e)
+        {
+            Graphics g = Graphics.FromImage(Mybitmap);
+            if (MouseDown == true)
+            {
+                g = Graphics.FromImage(Mybitmap);
+                Pen myRedPen = new Pen(Color.Red, 25);
+                g.DrawLine(myRedPen, e.X, e.Y, e.X + 1, e.Y + 1);
+                myRedPen.Dispose();
+                Refresh();
+            }
+        }
+
+        private void panel1_MouseUp(object sender, MouseEventArgs e)
+        {
+            MouseDown = false;
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Do you want to close this application?","Exit",MessageBoxButtons.YesNo,MessageBoxIcon.Warning)== System.Windows.Forms.DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
     }
     }
