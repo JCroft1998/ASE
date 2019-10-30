@@ -13,36 +13,36 @@ namespace GraphicsTools
 {
     public partial class MainForm : Form
 
-       
+
     {   //Referencing classes 
         Bitmap Mybitmap;
         Image File;
         Shapes shapes;
         Commands commands;
         bool MouseDown;
-    
+        UserInput userInput;
+        public int alpha;
+
         public MainForm()
         {
             InitializeComponent();
-            // Entry point of program, creating a bitmap 
-            
-            Mybitmap = new Bitmap(Size.Width,Size.Height);
+            // Entry point of program, creating a bitmap     
+            Mybitmap = new Bitmap(Size.Width, Size.Height);
             Graphics g = Graphics.FromImage(Mybitmap);
 
-            
-           // this.Width = 700;
-           // this.Height = 475;   
+
+
         }
 
-        
 
-    
+
+
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawImageUnscaled(Mybitmap,0,0);
+            e.Graphics.DrawImageUnscaled(Mybitmap, 0, 0);
         }
 
-        
+
         public void DrawTriangle()
         {
             Graphics g = Graphics.FromImage(Mybitmap);
@@ -55,23 +55,28 @@ namespace GraphicsTools
 
             g.DrawPolygon(BluePen, points);
 
-       
+
         }
 
-        
+        // Command strip menu shows a message box of the commands that can be used in the program
         private void commandsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Position Pen \n" +
                 "Pendraw \n" +
                 "Resetpen \n" +
-                "Rectangle 0,0,200,200 \n", "Commands", MessageBoxButtons.OKCancel,MessageBoxIcon.Information);
+                "Rectangle 0,0,200,200 \n", "Commands", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        /// This method will save the bitmap image
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
 
-           
+
+
         }
 
 
@@ -91,41 +96,108 @@ namespace GraphicsTools
         }
 
         private void txtCommand_KeyDown(object sender, KeyEventArgs e)
-
         {
+            string command = txtCommand.Text;
+
+
+
             if (e.KeyCode == Keys.Enter)
             {
                 Graphics g = Graphics.FromImage(Mybitmap);
 
-                if (txtCommand.Text == "Triangle")
+                if (command == "Triangle")
                 {
                     DrawTriangle();
 
 
-
                 }
-                else if (txtCommand.Text == "Rectangle")
+                else if (command == "Rectangle")
                 {
-                    DrawRectangle(0, 0, 200,200);
+                    DrawRectangle(0, 0, 200, 200);
                 }
-                else if (txtCommand.Text == "Clear")
+                else if (command == "Clear")
                 {
                     g.Clear(Color.White);
+                } else if (txtCommand.Text == "Save")
+                {
+
                 }
-                
-                    
-                
+
+                int forward = 0;
+
+                string[] spliter = command.Split(' ');
+
+                string[] first = new string[1000];
+
+                string[] second = new string[1000];
+
+                first[forward] = spliter[0];
+
+                forward = int.Parse(spliter[1]);
+
+                int f2 = 0;
+
+                if (spliter.Length == 2 && spliter[0].Contains("forward"))
+                {
+                    int newX = x;
+                    int newY = y + Convert.ToInt32(spliter[1]);
+
+                    f2 = int.Parse(spliter[1]);
+
+                    g.DrawLine(new Pen(Color.Blue), x, y, newX, newY);
+                    x = newX;
+                    y = newY;
+                }
+
+
 
                 Refresh();
             }
 
 
-            
-           
+
+
+
+
+        }
+
+
+        private int _x;
+
+        public int x
+        {
+            get
+            {
+                return _x;
+            }
+            set
+            {
+                _x = value;
+            }
 
             
         }
 
+        private int _y;
+
+        public int y
+        {
+            get
+            {
+                return _y;
+            }
+
+            set
+            {
+                _y = value;
+            }
+        }
+
+        /// <summary>
+        /// This method clears the bitmap and repaints it white 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         public void btnClear_Click(object sender, EventArgs e)
         {
             Graphics g = Graphics.FromImage(Mybitmap);
