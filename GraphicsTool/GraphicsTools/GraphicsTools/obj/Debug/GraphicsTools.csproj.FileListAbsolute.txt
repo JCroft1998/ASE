@@ -36,3 +36,4 @@ E:\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.csproj.Gener
 E:\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.csproj.CoreCompileInputs.cache
 E:\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.exe
 E:\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.pdb
+D:\GraphicsTool\GraphicsTools\GraphicsTools\obj\Debug\GraphicsTools.csproj.CoreCompileInputs.cache

@@ -20,7 +20,11 @@ namespace GraphicsTools
         Shapes shapes;
         Commands commands;
         bool MouseDown;
-        UserInput userInput;
+
+        int x = 0; int y = 0; int width = 0; int height = 0;
+
+        string Function;
+        
         public int alpha;
 
         public MainForm()
@@ -79,78 +83,85 @@ namespace GraphicsTools
 
         }
 
+        public void DrawCircle()
+        {
+            Graphics g = Graphics.FromImage(Mybitmap);
+
+            Pen redpen = new Pen(Color.Red, 3);
+
+            g.DrawEllipse(redpen, x, y, width, height);
+
+            Refresh();
+
+            width = 0; height = 0;
 
 
-        public void DrawRectangle(int x, int y, int height, int width)
+        }
+
+        /// <summary>
+        /// This method draws the rectangle 
+        /// </summary>
+
+        public void DrawRectangle()
         {
             Graphics g = Graphics.FromImage(Mybitmap);
 
             Pen blackpen = new Pen(Color.Black, 3);
 
-            Rectangle rect = new Rectangle(x, y, height, width);
-
-            g.DrawRectangle(blackpen, rect);
-
-
-
+            g.DrawRectangle(blackpen,x,y,width,height);
+         
         }
 
         private void txtCommand_KeyDown(object sender, KeyEventArgs e)
         {
-            string command = txtCommand.Text;
-
-
+          
 
             if (e.KeyCode == Keys.Enter)
             {
+                
+                string command = txtCommand.Text;
+                command = command.ToLower();
+
+                try
+                {
+                    string[] sSplit = command.Split(' ');
+                    Function = sSplit[0];
+                    width= Int32.Parse(sSplit[1]);
+                    height = Int32.Parse(sSplit[2]);
+                    
+
+                }
+                catch (Exception i)
+                {
+
+                }
+
                 Graphics g = Graphics.FromImage(Mybitmap);
 
-                if (command == "Triangle")
+                if (Function == "triangle")
                 {
                     DrawTriangle();
 
 
                 }
-                else if (command == "Rectangle")
+                if (Function == ("rectangle"))
                 {
-                    DrawRectangle(0, 0, 200, 200);
+                    DrawRectangle();
                 }
-                else if (command == "Clear")
+                if (Function == ("circle"))
+                {
+                    DrawCircle();
+                }
+                else if (Function == ("clear"))
                 {
                     g.Clear(Color.White);
-                } else if (txtCommand.Text == "Save")
+                }
+                else if (Function == ("save"))
                 {
 
                 }
 
-                int forward = 0;
-
-                string[] spliter = command.Split(' ');
-
-                string[] first = new string[1000];
-
-                string[] second = new string[1000];
-
-                first[forward] = spliter[0];
-
-                forward = int.Parse(spliter[1]);
-
-                int f2 = 0;
-
-                if (spliter.Length == 2 && spliter[0].Contains("forward"))
-                {
-                    int newX = x;
-                    int newY = y + Convert.ToInt32(spliter[1]);
-
-                    f2 = int.Parse(spliter[1]);
-
-                    g.DrawLine(new Pen(Color.Blue), x, y, newX, newY);
-                    x = newX;
-                    y = newY;
-                }
-
-
-
+           
                 Refresh();
             }
 
@@ -161,7 +172,7 @@ namespace GraphicsTools
 
         }
 
-
+        /*
         private int _x;
 
         public int x
@@ -192,6 +203,8 @@ namespace GraphicsTools
                 _y = value;
             }
         }
+
+    */
 
         /// <summary>
         /// This method clears the bitmap and repaints it white 
@@ -251,6 +264,12 @@ namespace GraphicsTools
             {
                 this.Close();
             }
+        }
+
+        public void Validation()
+        {
+            
+
         }
     }
     }
