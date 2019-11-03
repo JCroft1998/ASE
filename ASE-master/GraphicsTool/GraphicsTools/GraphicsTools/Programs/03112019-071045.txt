@@ -1,0 +1,5 @@
+rectangle 100 100
+moveto 50 50
+circle 50
+moveto 60
+drawto 50
